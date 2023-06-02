@@ -21,7 +21,6 @@ jobs:
           cmake -GNinja
                 -DCMAKE_BUILD_TYPE=RelWithDebInfo 
                 -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake 
-                -DCMAKE_CXX_COMPILER_LAUNCHER=ccache 
                 -B build/
       - run: cmake --build build
       - uses: actions/upload-artifact@v3
