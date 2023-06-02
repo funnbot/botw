@@ -17,6 +17,7 @@ set(CMAKE_CXX_FLAGS_RELWITHDEBINFO ${NX64_OPT_FLAGS})
 # Target options
 add_compile_options(-mcpu=cortex-a57+fp+simd+crypto+crc)
 add_compile_options(-mno-implicit-float)
+add_compile_options(-Wno-c++98-compat -Wno-c++98-compat-pedantic)
 # Environment
 add_compile_options(-stdlib=libc++)
 add_compile_options(-fPIC)
