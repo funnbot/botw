@@ -20,11 +20,7 @@ jobs:
       - env:
           CC: clang
           CXX: clang++
-        run: > 
-          cmake -GNinja
-          -DCMAKE_BUILD_TYPE=RelWithDebInfo 
-          -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake 
-          -B build/
+        run: cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake -B build/
       - run: cmake --build build
       - uses: actions/upload-artifact@v3
         with:
