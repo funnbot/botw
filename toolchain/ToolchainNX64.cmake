@@ -24,7 +24,7 @@ add_compile_options(-fPIC)
 # Helps with matching as this causes Clang to emit debug type info even for dynamic classes
 # with undefined vtables.
 add_compile_options(-fstandalone-debug -fno-eliminate-unused-debug-types)
-add_compile_options(-gdwarf-version 4 -fvar-tracking-assignments)
+add_compile_options(-gdwarf-4)
 
 add_definitions(-D SWITCH)
 add_definitions(-D NNSDK)
