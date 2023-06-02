@@ -27,3 +27,4 @@ jobs:
           name: build
           path: |
             build/**
+            !build/**/CMakeFiles/**
