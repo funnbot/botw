@@ -102,7 +102,7 @@ def main():
 
     setup.install_viking()
     #prepare_executable(args.original_nso)
-    setup.set_up_compiler("16.0.4")
+    #setup.set_up_compiler("16.0.4")
     create_build_dir()
 
 
