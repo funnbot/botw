@@ -28,7 +28,6 @@ target_compile_options(uking PRIVATE -fno-strict-aliasing)
 target_compile_options(uking PRIVATE -Wall -Wextra -Wdeprecated)
 target_compile_options(uking PRIVATE -Wno-unused-parameter -Wno-unused-private-field)
 target_compile_options(uking PRIVATE -Wno-invalid-offsetof)
-target_compile_options(uking PRIVATE -Wextra-semi)
 
 set(NN_SDK_MAJOR 7)
 set(NN_SDK_MINOR 0)
