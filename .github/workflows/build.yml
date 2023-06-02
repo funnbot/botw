@@ -9,7 +9,7 @@ jobs:
         with:
           submodules: 'recursive'
       - run: sudo apt update -y && sudo apt upgrade -y
-      - run: sudo apt install python3 ninja-build cmake ccache xdelta3 clang libssl-dev pkg-config
+      - run: sudo apt install python3 ninja-build cmake xdelta3 clang libssl-dev pkg-config
       - run: pip install capstone colorama cxxfilt pyelftools ansiwrap watchdog python-Levenshtein toml
       - name: Install LLVM and Clang
         uses: KyleMayes/install-llvm-action@v1
