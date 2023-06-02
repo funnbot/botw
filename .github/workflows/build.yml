@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'recursive'
-      - run: sudo apt update -y && sudo apt upgrade -y
+      - run: sudo apt update
       - run: sudo apt install python3 ninja-build cmake xdelta3 libssl-dev pkg-config
       - run: pip install capstone colorama cxxfilt pyelftools ansiwrap watchdog python-Levenshtein toml
 #       - name: Install LLVM and Clang
@@ -22,9 +22,9 @@ jobs:
           CXX: clang++
         run: > 
           cmake -GNinja
-                -DCMAKE_BUILD_TYPE=RelWithDebInfo 
-                -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake 
-                -B build/
+          -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+          -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake 
+          -B build/
       - run: cmake --build build
       - uses: actions/upload-artifact@v3
         with:
