@@ -30,7 +30,7 @@ add_compile_options(-stdlib=libc++)
 add_compile_options(-fPIC)
 # Helps with matching as this causes Clang to emit debug type info even for dynamic classes
 # with undefined vtables.
-add_compile_options(-fstandalone-debug)
+add_compile_options(-fstandalone-debug -fno-eliminate-unused-debug-types)
 
 add_definitions(-D SWITCH)
 add_definitions(-D NNSDK)
