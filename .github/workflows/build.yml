@@ -8,9 +8,21 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'recursive'
+      - run: sudo apt update -y && sudo apt upgrade -y
       - run: sudo apt install python3 ninja-build cmake ccache xdelta3 clang libssl-dev pkg-config
       - run: pip install capstone colorama cxxfilt pyelftools ansiwrap watchdog python-Levenshtein toml
-      - run: python3 tools/setup.py
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "16.0.4"
+      - env:
+          UKING_CLANG: ${{ env.LLVM_DIR }}
+        run: > 
+          cmake -GNinja
+                -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+                -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake 
+                -DCMAKE_CXX_COMPILER_LAUNCHER=ccache 
+                -B build/
       - run: cmake --build build
       - uses: actions/upload-artifact@v3
         with:
