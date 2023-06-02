@@ -9,16 +9,17 @@ jobs:
         with:
           submodules: 'recursive'
       - run: sudo apt update -y && sudo apt upgrade -y
-      - run: sudo apt install python3 ninja-build cmake xdelta3 clang libssl-dev pkg-config
+      - run: sudo apt install python3 ninja-build cmake xdelta3 libssl-dev pkg-config
       - run: pip install capstone colorama cxxfilt pyelftools ansiwrap watchdog python-Levenshtein toml
-      - name: Install LLVM and Clang
-        uses: KyleMayes/install-llvm-action@v1
-        with:
-          version: '16.0.4'
-          ubuntu-version: '22.04'
-          env: true
+#       - name: Install LLVM and Clang
+#         uses: KyleMayes/install-llvm-action@v1
+#         with:
+#           version: '16.0.4'
+#           ubuntu-version: '22.04'
+#           env: true
       - env:
-          UKING_CLANG: ${{ env.LLVM_PATH }}
+          CC: clang
+          CXX: clang++
         run: > 
           cmake -GNinja
                 -DCMAKE_BUILD_TYPE=RelWithDebInfo 
