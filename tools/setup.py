@@ -94,11 +94,11 @@ def create_build_dir():
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        "setup.py", description="Set up the Breath of the Wild decompilation project")
-    parser.add_argument("original_nso", type=Path,
-                        help="Path to the original NSO (1.5.0 or 1.6.0, compressed or not)", nargs="?")
-    args = parser.parse_args()
+    #parser = argparse.ArgumentParser(
+    #    "setup.py", description="Set up the Breath of the Wild decompilation project")
+    #parser.add_argument("original_nso", type=Path,
+    #                    help="Path to the original NSO (1.5.0 or 1.6.0, compressed or not)", nargs="?")
+    #args = parser.parse_args()
 
     setup.install_viking()
     #prepare_executable(args.original_nso)
