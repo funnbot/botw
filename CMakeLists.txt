@@ -30,8 +30,8 @@ target_compile_options(uking PRIVATE -Wno-unused-parameter -Wno-unused-private-f
 target_compile_options(uking PRIVATE -Wno-invalid-offsetof)
 target_compile_options(uking PRIVATE -Wextra-semi)
 
-set(NN_SDK_MAJOR 4)
-set(NN_SDK_MINOR 4)
+set(NN_SDK_MAJOR 7)
+set(NN_SDK_MINOR 0)
 set(NN_SDK_PATCH 0)
 set(NN_SDK_TYPE "Release")
 
