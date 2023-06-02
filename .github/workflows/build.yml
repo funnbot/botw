@@ -12,3 +12,8 @@ jobs:
       - run: pip install capstone colorama cxxfilt pyelftools ansiwrap watchdog python-Levenshtein toml
       - run: python3 tools/setup.py
       - run: cmake --build build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: |
+            build/
