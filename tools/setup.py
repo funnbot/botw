@@ -101,7 +101,7 @@ def main():
     args = parser.parse_args()
 
     setup.install_viking()
-    prepare_executable(args.original_nso)
+    #prepare_executable(args.original_nso)
     setup.set_up_compiler("4.0.1")
     create_build_dir()
 
