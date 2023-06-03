@@ -33,5 +33,5 @@ add_definitions(-D MATCHING_HACK_NX_CLANG)
 add_link_options(-stdlib=libc++ -nostdlib)
 add_link_options(-fPIC -Wl,-Bsymbolic-functions -shared)
 add_link_options(-fuse-ld=lld)
-add_link_options(-Wl,-force_load)
+add_link_options("-Wl,--whole-archive")
 
