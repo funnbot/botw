@@ -34,3 +34,6 @@ add_link_options(-stdlib=libc++ -nostdlib)
 add_link_options(-fPIC -Wl,-Bsymbolic-functions -shared)
 add_link_options(-fuse-ld=lld)
 add_link_options("-Wl,--whole-archive")
+
+add_compile_options(-flto=thin)
+add_link_options(-flto=thin)
